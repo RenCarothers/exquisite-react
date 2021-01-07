@@ -13,6 +13,27 @@ const Game = () => {
     }
   }).join(' ');
 
+  const [submissionList, setSubmissionList] = useState([]);
+  const [lastSubmission, setLastSubmission] = useState('');
+  const submissions = [];
+  const [player, setPlayer] = useState(1);
+
+  const addSubmission = (submission) => {
+    console.log(submission) // delete laterz
+    
+    // Duplicate the submission list.
+    const newSubmissionList = [...submissions];
+
+    newSubmissionList.push(submission);
+
+    setSubmissionList(newSubmissionList);
+  
+    setPlayer(player +1)
+
+    setLastSubmission(submissionList[submissionList.length-1]);
+
+  }
+
   return (
     <div className="Game">
       <h2>Game</h2>
@@ -25,9 +46,9 @@ const Game = () => {
         { exampleFormat }
       </p>
 
-      <RecentSubmission />
+      { (submissionList.length !== 0) ? <RecentSubmission submission={lastSubmission} /> : <span /> }
 
-      <PlayerSubmissionForm fields={FIELDS}/>
+      <PlayerSubmissionForm fields={FIELDS} sendSubmission={addSubmission} index={player}/>
 
       <FinalPoem />
 
