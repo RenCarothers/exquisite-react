@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import './PlayerSubmissionForm.css';
 
-const PlayerSubmissionForm = () => {
+const PlayerSubmissionForm = ({fields}) => {
+  console.log(fields)
+
   return (
     <div className="PlayerSubmissionForm">
       <h3>Player Submission Form for Player #{  }</h3>
@@ -11,14 +13,27 @@ const PlayerSubmissionForm = () => {
       <form className="PlayerSubmissionForm__form" >
 
         <div className="PlayerSubmissionForm__poem-inputs">
-
-          {
-            // Put your form inputs here... We've put in one below as an example
-          }
+          <span>{fields[0]}</span>
           <input
-            placeholder="hm..."
+            placeholder={fields[1].placeholder}
             type="text" />
-
+          <input
+            placeholder={fields[2].placeholder}
+            type="text" />  
+          <input
+            placeholder={fields[3].placeholder}
+            type="text" />
+          <input
+            placeholder={fields[4].placeholder}
+            type="text" />
+          <span>{fields[5]}</span>
+          <input
+            placeholder={fields[6].placeholder}
+            type="text" />
+          <input
+            placeholder={fields[7].placeholder}
+            type="text" />
+          <span>{fields[8]}</span>  
         </div>
 
         <div className="PlayerSubmissionForm__submit">
