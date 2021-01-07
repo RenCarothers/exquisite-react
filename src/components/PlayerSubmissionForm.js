@@ -4,7 +4,18 @@ import PropTypes from 'prop-types';
 import './PlayerSubmissionForm.css';
 
 const PlayerSubmissionForm = ({fields}) => {
-  console.log(fields)
+  // console.log(fields)
+
+  const generateInputFields = fields.map((field) => {
+    if (field.key) {
+      return <input
+      placeholder={field.placeholder}
+      type="text" />  
+    }
+    else {
+      return <span>{field}</span>
+    }
+  })
 
   return (
     <div className="PlayerSubmissionForm">
@@ -13,27 +24,9 @@ const PlayerSubmissionForm = ({fields}) => {
       <form className="PlayerSubmissionForm__form" >
 
         <div className="PlayerSubmissionForm__poem-inputs">
-          <span>{fields[0]}</span>
-          <input
-            placeholder={fields[1].placeholder}
-            type="text" />
-          <input
-            placeholder={fields[2].placeholder}
-            type="text" />  
-          <input
-            placeholder={fields[3].placeholder}
-            type="text" />
-          <input
-            placeholder={fields[4].placeholder}
-            type="text" />
-          <span>{fields[5]}</span>
-          <input
-            placeholder={fields[6].placeholder}
-            type="text" />
-          <input
-            placeholder={fields[7].placeholder}
-            type="text" />
-          <span>{fields[8]}</span>  
+          {
+            generateInputFields
+          }
         </div>
 
         <div className="PlayerSubmissionForm__submit">
