@@ -15,16 +15,20 @@ const Game = () => {
 
   const [submissionList, setSubmissionList] = useState([]);
   const [lastSubmission, setLastSubmission] = useState('');
-  const submissions = [];
   const [player, setPlayer] = useState(1);
+  const [finalizePoem, setFinalizePoem] = useState(false);
 
   const addSubmission = (submission) => {
     console.log(submission) // delete laterz
     
     // Duplicate the submission list.
-    const newSubmissionList = [...submissions];
+    const newSubmissionList = [...submissionList];
+
+    console.log(newSubmissionList); // delete meee
 
     newSubmissionList.push(submission);
+
+    console.log(newSubmissionList); // delete meee
 
     setSubmissionList(newSubmissionList);
   
@@ -32,7 +36,13 @@ const Game = () => {
 
     setLastSubmission(submissionList[submissionList.length-1]);
 
+    console.log(submissionList) // delete laterz
+
   }
+
+  const revealPoem = () => {
+    setFinalizePoem(true);
+  };
 
   return (
     <div className="Game">
@@ -50,7 +60,7 @@ const Game = () => {
 
       <PlayerSubmissionForm fields={FIELDS} sendSubmission={addSubmission} index={player}/>
 
-      <FinalPoem />
+      <FinalPoem submissions={submissionList} isSubmitted={finalizePoem} revealPoem={revealPoem} />
 
     </div>
   );
