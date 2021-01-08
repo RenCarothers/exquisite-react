@@ -49,27 +49,28 @@ const PlayerSubmissionForm = ({fields, sendSubmission, index}) => {
       adj2: '',
       noun2: ''
     });
-
-    // console.log(formFields); // remove me laterz
   };  
 
   const inputValid = (field) => {
     return formFields[field.key] !== '';
   };
 
-  const generateInputFields = fields.map((field) => {
-    console.log(field)
+  const generateInputFields = fields.map((field, index) => {
     if (field.key) {
-      return <input
-      name={field.key}
-      placeholder={field.placeholder}
-      value={formFields[field.key] || ''}
-      onChange={onInputChange}
-      className={inputValid(field) ? '' : 'PlayerSubmissionFormt__input--invalid'}
-      type="text" />;
+      return <li key={index} className='unbulleted-List'>
+        <input
+          name={field.key}
+          placeholder={field.placeholder}
+          value={formFields[field.key] || ''}
+          onChange={onInputChange}
+          className={inputValid(field) ? '' : 'PlayerSubmissionFormt__input--invalid'}
+          type="text" />
+      </li>;
     }
     else {
-      return <span>{field}</span>;
+      return <li key={index} className='unbulleted-List'>
+        <span>{field}</span>
+      </li>
     }
   });
 

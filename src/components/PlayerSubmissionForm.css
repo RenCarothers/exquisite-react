@@ -38,3 +38,7 @@
 .PlayerSubmissionForm__input--invalid::placeholder {
   color: black;
 }
+
+.unbulleted-List {
+  list-style: none;
+}
