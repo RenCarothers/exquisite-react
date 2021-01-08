@@ -15,7 +15,7 @@ const PlayerSubmissionForm = ({fields, sendSubmission, index}) => {
   });
 
   const onInputChange = (event) => {
-    console.log(`Changing field ${ event.target.name } to ${ event.target.value }`);
+    // console.log(`Changing field ${ event.target.name } to ${ event.target.value }`);
     // Duplicate formFields into new object
     const newFormFields = {
       ...formFields,
@@ -59,7 +59,7 @@ const PlayerSubmissionForm = ({fields, sendSubmission, index}) => {
       name={field.key}
       placeholder={field.placeholder}
       onChange={onInputChange}
-      type="text" />;  
+      type="text" />;
     }
     else {
       return <span>{field}</span>;

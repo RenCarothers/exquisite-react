@@ -14,31 +14,30 @@ const Game = () => {
   }).join(' ');
 
   const [submissionList, setSubmissionList] = useState([]);
-  const [lastSubmission, setLastSubmission] = useState('');
   const [player, setPlayer] = useState(1);
   const [finalizePoem, setFinalizePoem] = useState(false);
 
   const addSubmission = (submission) => {
-    console.log(submission) // delete laterz
+    // console.log(submission) // delete laterz
     
     // Duplicate the submission list.
     const newSubmissionList = [...submissionList];
 
-    console.log(newSubmissionList); // delete meee
+    // console.log(newSubmissionList); // delete meee
 
     newSubmissionList.push(submission);
 
-    console.log(newSubmissionList); // delete meee
+    // console.log(newSubmissionList); // delete meee
 
     setSubmissionList(newSubmissionList);
   
     setPlayer(player +1)
 
-    setLastSubmission(submissionList[submissionList.length-1]);
-
-    console.log(submissionList) // delete laterz
+    // console.log(submissionList) // delete laterz
 
   }
+
+  const lastSubmission = submissionList[submissionList.length-1];
 
   const revealPoem = () => {
     setFinalizePoem(true);
