@@ -15,7 +15,9 @@ const FinalPoem = ({isSubmitted, submissions, revealPoem}) => {
           <h3>Final Poem</h3>
         </section>
         <div className="FinalPoem__reveal-btn-container">
-          {prettyPrintPoem}
+          <p>
+            {prettyPrintPoem}
+          </p>
         </div>
       </div>
     )
