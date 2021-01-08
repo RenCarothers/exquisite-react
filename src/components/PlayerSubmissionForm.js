@@ -53,12 +53,18 @@ const PlayerSubmissionForm = ({fields, sendSubmission, index}) => {
     // console.log(formFields); // remove me laterz
   };  
 
+  const inputValid = (field) => {
+    return formFields[field.key] !== '';
+  };
+
   const generateInputFields = fields.map((field) => {
+    console.log(field)
     if (field.key) {
       return <input
       name={field.key}
       placeholder={field.placeholder}
       onChange={onInputChange}
+      className={inputValid(field) ? '' : 'PlayerSubmissionFormt__input--invalid'}
       type="text" />;
     }
     else {
