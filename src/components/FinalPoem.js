@@ -4,8 +4,8 @@ import './FinalPoem.css';
 
 const FinalPoem = ({isSubmitted, submissions, revealPoem}) => {
 
-  const prettyPrintPoem = submissions.map((poem) => (
-    <p>{poem}</p>
+  const prettyPrintPoem = submissions.map((poem, index) => ( // why couldn't I use {} here?
+    <p key={index}>{poem}</p>
   ));
 
   if (isSubmitted) {
