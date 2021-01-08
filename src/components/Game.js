@@ -57,7 +57,7 @@ const Game = () => {
 
       { (submissionList.length !== 0) ? <RecentSubmission submission={lastSubmission} /> : <span /> }
 
-      <PlayerSubmissionForm fields={FIELDS} sendSubmission={addSubmission} index={player}/>
+      { (finalizePoem) ? <span /> : <PlayerSubmissionForm fields={FIELDS} sendSubmission={addSubmission} index={player} /> }
 
       <FinalPoem submissions={submissionList} isSubmitted={finalizePoem} revealPoem={revealPoem} />
 
