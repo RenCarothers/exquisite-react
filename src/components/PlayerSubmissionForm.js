@@ -63,6 +63,7 @@ const PlayerSubmissionForm = ({fields, sendSubmission, index}) => {
       return <input
       name={field.key}
       placeholder={field.placeholder}
+      value={formFields[field.key] || ''}
       onChange={onInputChange}
       className={inputValid(field) ? '' : 'PlayerSubmissionFormt__input--invalid'}
       type="text" />;
