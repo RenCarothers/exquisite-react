@@ -34,23 +34,6 @@ const FinalPoem = ({isSubmitted, submissions, revealPoem}) => {
     </div>
     );
   }
-
-  // const onButtonClick = () => {
-  //   return true
-  // };
-
-  // const onButtonClick = () => {
-  //   isSubmitted(true);
-  //   submissions.map((poem) => {
-  //     return poem
-  //   });
-  // };
-
-  // revealPoem = () => {
-  //   submissions.map((poem) => {
-  //     return poem
-  //   });
-  // };
 }
 
 FinalPoem.propTypes = {

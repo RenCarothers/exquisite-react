@@ -18,23 +18,11 @@ const Game = () => {
   const [finalizePoem, setFinalizePoem] = useState(false);
 
   const addSubmission = (submission) => {
-    // console.log(submission) // delete laterz
-    
-    // Duplicate the submission list.
     const newSubmissionList = [...submissionList];
-
-    // console.log(newSubmissionList); // delete meee
-
     newSubmissionList.push(submission);
-
-    // console.log(newSubmissionList); // delete meee
-
+    
     setSubmissionList(newSubmissionList);
-  
     setPlayer(player +1)
-
-    // console.log(submissionList) // delete laterz
-
   }
 
   const lastSubmission = submissionList[submissionList.length-1];
